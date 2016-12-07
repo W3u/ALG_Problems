@@ -3,10 +3,10 @@
 
 #define MAXSIZE 100
 
-typedef int elemType;	//元素类型
+typedef int dataType;	//元素类型
 
 typedef struct node{
-	elemType data[MAXSIZE];
+	dataType data[MAXSIZE];
 	int length;	//链表长度
 } SeqList,* pSeqList;
 
@@ -14,7 +14,7 @@ typedef struct node{
 //1.顺序表的初始化
 pSeqList Init_SeqList(void);
 //4.插入元素(将x插入顺序表第i个位置上，返回【1:成功；0:插入位置不合法；-1:溢出；-2:顺序表不存在】)
-int Insert_SeqList(pSeqList pL,int i,elemType key);
+int Insert_SeqList(pSeqList pL,int i,dataType key);
 //5.删除元素(删除第i个位置上的元素，返回【1:成功；0:删除位置不合法；-1:顺序表不存在】)
 int Delete_SeqList(pSeqList pL,int i);
 
@@ -80,7 +80,7 @@ pSeqList Init_SeqList(void)
 //2.判断顺序表是否已满（超过MAXSIZE）
 //3.判断插入位置的合法性(1<=i<=length+1)
 //4.插入操作，修改表长
-int Insert_SeqList(pSeqList pL,int i,elemType key)
+int Insert_SeqList(pSeqList pL,int i,dataType key)
 {
 	printf("顺序表插入：位置i=%d 插入key=%d\n",i,key);
 	if(pL==NULL)
